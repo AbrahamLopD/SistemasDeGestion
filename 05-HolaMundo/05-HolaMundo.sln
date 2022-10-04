@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-HolaMundo_WebForms", "05-HolaMundo_WebForms\05-HolaMundo_WebForms.csproj", "{62C49051-6928-498C-954A-198466885B60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-HolaMundo_Entidades", "05-HolaMundo_Entidades\05-HolaMundo_Entidades.csproj", "{D11A3CF2-EFC7-4A41-A268-3B99BC4822AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62C49051-6928-498C-954A-198466885B60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62C49051-6928-498C-954A-198466885B60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62C49051-6928-498C-954A-198466885B60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62C49051-6928-498C-954A-198466885B60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D11A3CF2-EFC7-4A41-A268-3B99BC4822AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D11A3CF2-EFC7-4A41-A268-3B99BC4822AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D11A3CF2-EFC7-4A41-A268-3B99BC4822AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D11A3CF2-EFC7-4A41-A268-3B99BC4822AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0FA82A12-C38E-4C65-BE5E-A0E06CBA6548}
+	EndGlobalSection
+EndGlobal
