@@ -11,7 +11,7 @@ namespace _05_HolaMundo_WebForms
     public partial class WebForm1 : System.Web.UI.Page
     {
         /// <summary>
-        /// comentarios: Evento saludar que mostrará un saludo al nombre que se introduzca
+        /// comentarios: Evento asociado al click del botón saludar que mostrará un saludo al nombre que se introduzca
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
