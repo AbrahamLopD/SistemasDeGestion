@@ -1,0 +1,21 @@
+﻿@*
+    Página que nos muestra una tabla con multiplicaciones
+*@
+<h1>Tablas de multiplicar</h1>
+
+<table style="border:solid 1px black">
+    @{
+        int result = 0;
+        for (int i = 1; i <= 12; i++) {
+            <tr>
+            @for(int j = 1; j <= 10; j++) {
+                result = j * i;
+                    <td style="border:solid 1px black">@j * @i = @result</td>
+            }
+            </tr>
+        }
+    }
+    <tr>
+        <th></th>
+    </tr>
+</table>
