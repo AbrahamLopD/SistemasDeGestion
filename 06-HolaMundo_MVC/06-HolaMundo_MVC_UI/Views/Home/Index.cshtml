@@ -2,8 +2,8 @@
     Vista index de razor, donde veremos el día y la hora y nos dirá si hemos sobrepasado o no el mediodía
 *@
 @{
-    string formatDate = "dd/MM/yyyy HH:mm:ss";
-    var now = DateTime.Now.ToString(formatDate);
+    string formatDate = "dd/MM/yyyy HH:mm";
+    string now = DateTime.Now.ToString(formatDate);
 }
 
 <h1>Hola, son las @now</h1>
