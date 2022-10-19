@@ -8,8 +8,8 @@ namespace _07_Pages_MAUI
         {
             InitializeComponent();
 
-            MainPage = new FlyoutPageNavigation();
-            //MainPage = new NavigationPage(new MainPage());
+            //MainPage = new FlyoutPageNavigation();
+            MainPage = new NavigationPage(new MainPage());
         }
     }
 }

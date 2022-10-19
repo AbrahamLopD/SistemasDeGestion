@@ -16,7 +16,7 @@ public partial class FlyoutPageNavigation : FlyoutPage
         if (item != null)
         {
             Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
-            IsPresented = false;
+            //IsPresented = false;
         }
     }
 }
