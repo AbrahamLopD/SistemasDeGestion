@@ -4,10 +4,15 @@
              x:Class="_07_Pages_MAUI.MainPage"
              Title="MainPage">
     <StackLayout>
-
-        <Entry Placeholder="Escribe algo"></Entry>
+        <Entry x:Name="inputNombre" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" Placeholder="Escribe tu nombre"></Entry>
+        
+        <Entry x:Name="inputApellidos" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" Placeholder="Escribe tu apellido"></Entry>
 
         <Button Clicked="OnNav" Text="Naveguemos"></Button>
+
+        <Button Clicked="OnNavPage4" Text="A page 4"></Button>
+
+        <Button Clicked="OnNavPage5" Text="A page 5"></Button>
 
     </StackLayout>
 </ContentPage>

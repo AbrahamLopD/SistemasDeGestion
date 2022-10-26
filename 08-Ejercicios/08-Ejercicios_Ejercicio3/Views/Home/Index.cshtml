@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <form method="post">
+        <input type="text" name="nombre" value="Abraham" disabled />
+        <input type="text" name="apellidos" value="López Delgado" disabled />
+        <input type="number" name="edad" value="21" disabled />
+        <button type="submit">Enviar</button>
+    </form>
+
+    @Html.ActionLink("Editar", "Editar", "Home", new {persona=ViewBag.persona})
+</div>

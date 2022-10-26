@@ -83,6 +83,12 @@
 	  <MauiXaml Update="Views\Page3.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Page4.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Page5.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\TabbedPageView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_07_Pages_MAUI.Views.Page5"
+             Title="Page5">
+    <HorizontalStackLayout>
+        <Label 
+            x:Name="lblNombre"
+            Text="{Binding Nombre}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Label 
+            x:Name="lblApellidos"
+            Text="{Binding Apellidos}"
+            Margin="5, 0, 0, 0"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Label 
+            x:Name="lblNombreCompleto"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Margin="20, 0, 0, 0">
+            <Label.Text>
+                <MultiBinding StringFormat="{} {0} {1}">
+                    <Binding Path="Nombre" />
+                    <Binding Path="Apellidos" />
+                </MultiBinding>
+            </Label.Text>
+        </Label>
+        
+        
+    </HorizontalStackLayout>
+</ContentPage>

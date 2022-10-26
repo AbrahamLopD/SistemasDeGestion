@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model _07_Ejercicios_Entidades.Persona
+
+<div class="text-center">
+    <h1>@ViewData["Saludo"], @Model.Nombre @Model.Apellidos</h1>
+    <p>Ahora mismo es @ViewBag.FechaActual</p>
+    
+    @Html.ActionLink("Lista De personas", "ListadoPersonas", "Home")
+
+</div>

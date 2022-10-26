@@ -7,4 +7,6 @@
     <local:Page1 IconImageSource="chocolate.png"></local:Page1>
     <local:Page2 IconImageSource="home.png"></local:Page2>
     <local:Page3 IconImageSource="ice_cream.png"></local:Page3>
+    <local:Page4 IconImageSource="ice_cream.png"></local:Page4>
+    <local:Page5 IconImageSource="ice_cream.png"></local:Page5>
 </TabbedPage>
