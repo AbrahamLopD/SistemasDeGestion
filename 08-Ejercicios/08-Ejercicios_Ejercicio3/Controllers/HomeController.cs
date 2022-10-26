@@ -17,14 +17,14 @@ namespace _08_Ejercicios_Ejercicio3.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            Persona p = new Persona("Fernando", "Galiana", 49);
+            return View(p);
         }
 
         [HttpPost]
         public ActionResult Index(Persona persona)
         {
-            ViewBag.Persona = persona;
-            return View();
+            return View("Editar", persona);
         }
 
         public ActionResult Editar(Persona persona)

@@ -1,14 +1,10 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model _08_Ejercicios_Ejercicio3.Models.Entidades.Persona
 
-<div class="text-center">
+<div>
     <form method="post">
-        <input type="text" name="nombre" value="Abraham" disabled />
-        <input type="text" name="apellidos" value="López Delgado" disabled />
-        <input type="number" name="edad" value="21" disabled />
-        <button type="submit">Enviar</button>
+        @Html.TextBox("nombre", Model.Nombre)
+        @Html.TextBoxFor(persona => persona.Apellidos)
+        <input type="number" name="edadPersona" value="@Model.Edad" />
+        <input type="submit" value="Enviar"/>
     </form>
-
-    @Html.ActionLink("Editar", "Editar", "Home", new {persona=ViewBag.persona})
 </div>
