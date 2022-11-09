@@ -1,8 +1,13 @@
 ﻿@model _08_Ejercicios_Ejercicio3.Models.Entidades.Persona
 
-<form method="post">
-    @Html.TextBox("nombre", Model.Nombre)
-    @Html.TextBoxFor(persona => persona.Apellidos)
-    <input type="number" name="edadPersona" value="Model.Edad" />
-</form>
-<p>@ViewBag.nombre</p>
+<div>
+    <form method="post">
+
+        <label>Nombre: @Html.TextBox("nombre", Model.Nombre) @Html.ValidationMessageFor(m => m.Nombre)</label>
+        @Html.TextBoxFor(persona => persona.Apellidos)
+        <input type="text" name="edad" value="@Model.Edad" />
+        @Html.TextBoxFor(persona => persona.Telefono)
+        <input type="submit" value="Enviar" />
+
+    </form>
+</div>

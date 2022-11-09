@@ -15,23 +15,29 @@ namespace _08_Ejercicios_Ejercicio3.Controllers
             _logger = logger;
         }
 
-        public ActionResult Index()
+        public ActionResult Editar()
         {
-            Persona p = new Persona("Fernando", "Galiana", 49);
+            Persona p = new Persona("Abraham", "López", 21, "674346732");
             return View(p);
         }
 
         [HttpPost]
-        public ActionResult Index(Persona persona)
-        {
-            return View("Editar", persona);
-        }
-
         public ActionResult Editar(Persona persona)
         {
-            ViewBag.nombre = persona.Nombre;
-            return View(persona);
+            if(!ModelState.IsValid)
+            {
+                return View(persona);
+            }
+            else
+            {
+                return View("PersonaModificada", persona);
+            }
         }
+
+        /*public ActionResult PersonaModificada(Persona persona)
+        {
+            return View(persona);
+        }*/
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

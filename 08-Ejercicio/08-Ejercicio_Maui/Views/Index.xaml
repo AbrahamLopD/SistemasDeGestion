@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_08_Ejercicio_Maui.Views.Index"
+             Title="Index">
+    <VerticalStackLayout>
+        <Picker x:Name="selectMisiones" Title="Selecciona una misión" 
+                ItemsSource="{Binding listaMisionesVM}"  
+                SelectedItem="OnMisionSeleccionada" />
+
+        <Button x:Name="btnSubmit" Text="Detalles" />
+
+        <Label x:Name="lblTitulo" />
+        <Label x:Name="lblDescripcion" />
+        <Label x:Name="lblCredito" />
+    </VerticalStackLayout>
+</ContentPage>
+
+<!--<div class="text-center">
+    <form method="post">
+        <select id="selectMisiones" name="idMision">
+            @for (int i = 0; i
+            <Model.ListadoMisiones.Count; i++)
+            {
+                <option value="@Model.ListadoMisiones[i].Id">@Model.ListadoMisiones[i].Titulo
+                </option>
+                }
+        </select>
+
+        <button type="submit">Detalles</button>
+    </form>
+
+    <br />
+    <h3 id="titulo">@Model.Mision.Titulo</h3>
+    @if (Model.Mision.Descripcion != "")
+    {
+    <p id="descripcion">
+        <b>Descripción:</b> @Model.Mision.Descripcion
+    </p>
+    }
+    @if (Model.Mision.Credito != 0)
+    {
+    <p id="credito">Crédito: @Model.Mision.Credito</p>
+    }
+</div>-->
