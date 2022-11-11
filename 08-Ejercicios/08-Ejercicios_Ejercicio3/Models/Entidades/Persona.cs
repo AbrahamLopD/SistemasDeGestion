@@ -32,7 +32,7 @@ namespace _08_Ejercicios_Ejercicio3.Models.Entidades
         [Required(ErrorMessage = "Campo Obligatorio")] 
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellidos { get => apellidos; set => apellidos = value; }
-        [MaxLength(50), Required]
+        //[MaxLength(50), Required]
         public int Edad { get => edad; set => edad = value; }
         public string Telefono { get => telefono; set => telefono = value; }
     }

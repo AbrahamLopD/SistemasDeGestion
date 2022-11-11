@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:_08_Ejercicio_MVC.Models.ViewModels"
              x:Class="_08_Ejercicio_Maui.Views.Index"
              Title="Index">
+    <ContentPage.BindingContext>
+        <model:EscogerMision />
+    </ContentPage.BindingContext>
     <VerticalStackLayout>
         <Picker x:Name="selectMisiones" Title="Selecciona una misión" 
                 ItemsSource="{Binding listaMisionesVM}"  
@@ -10,9 +14,11 @@
 
         <Button x:Name="btnSubmit" Text="Detalles" />
 
-        <Label x:Name="lblTitulo" />
-        <Label x:Name="lblDescripcion" />
-        <Label x:Name="lblCredito" />
+        <VerticalStackLayout IsVisible="{Binding VisibilidadDescripcion}">
+            <Label x:Name="lblTitulo" Text="ASDA" />
+            <Label x:Name="lblDescripcion" Text="ASDA" />
+            <Label x:Name="lblCredito" Text="ASDA" />
+        </VerticalStackLayout>
     </VerticalStackLayout>
 </ContentPage>
 

@@ -24,7 +24,18 @@ namespace _08_Ejercicio_BL
         /// <returns></returns>
         public static ObservableCollection<Mision> GetListadoMisiones()
         {
-            return ListadoMisionesDAL.GetListadoMisiones();
+            ObservableCollection<Mision> listadoMisiones = new ObservableCollection<Mision>();
+
+            if(DateTime.Now.DayOfWeek == DayOfWeek.Sunday)
+            {
+                listadoMisiones = null;
+            }
+            else
+            {
+                listadoMisiones = ListadoMisionesDAL.GetListadoMisiones();
+            }
+            
+            return listadoMisiones;
         }
         #endregion
     }
