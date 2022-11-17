@@ -17,7 +17,8 @@ namespace _08_Ejercicio_BL
 
         #region Métodos
         /// <summary>
-        /// Función que llama y devuelve la función GetListadoMisiones() de la capa DAL
+        /// Función que llama y devuelve la función GetListadoMisiones() de la capa DAL.
+        /// Comprueba si es domingo y solo lo devuelve en caso contrario
         /// Precondición: La clase Mision debe existir
         /// Postcondición: ninguna
         /// </summary>

@@ -11,14 +11,14 @@ namespace _08_Ejercicio_MVC.Models.ViewModels
         private ObservableCollection<Mision> listadoMisiones;
         private Mision mision;
         private bool visibilidadDescripcion;
-        private DelegateCommand mostrarDetallesCommand;
+        public DelegateCommand mostrarDetallesCommand;
         #endregion
 
         #region Constructor
         public EscogerMision()
         {
             this.listadoMisiones = ListadoMisionesBL.GetListadoMisiones();
-            this.mision = new Mision(); 
+            this.mision = null; 
             this.visibilidadDescripcion = false;
         }
         #endregion
@@ -28,22 +28,27 @@ namespace _08_Ejercicio_MVC.Models.ViewModels
         public ObservableCollection<Mision> ListadoMisiones { get => listadoMisiones; set => listadoMisiones = value; }
         public Mision Mision { get => mision; set
             {
+                if(mision == value) return;
+
                 mision = value;
-                //visibilidadDescripcion = true;
-                //NotifyPropertyChanged("VisibilidadDescripcion");
+                mostrarDetallesCommand.RaiseCanExecuteChanged();
+
+                if(visibilidadDescripcion)
+                {
+                    visibilidadDescripcion = false;
+                    NotifyPropertyChanged(nameof(VisibilidadDescripcion));
+                }
             } 
         }
 
         public bool VisibilidadDescripcion { get
             {
-
                 return visibilidadDescripcion;
             }
         }
         public DelegateCommand MostrarDetallesCommand { get
             {
-                mostrarDetallesCommand = new DelegateCommand(MostrarDetallesCommandExecute, MostrarDetallesCommandCanExecute);
-
+                this.mostrarDetallesCommand = new DelegateCommand(MostrarDetallesCommandExecute, MostrarDetallesCommandCanExecute);
                 return mostrarDetallesCommand;
             }
         }
@@ -55,16 +60,21 @@ namespace _08_Ejercicio_MVC.Models.ViewModels
         /// </summary>
         private void MostrarDetallesCommandExecute()
         {
-            //throw new NotImplementedException();
+            visibilidadDescripcion = true;
+
+            NotifyPropertyChanged("VisibilidadDescripcion");
+            NotifyPropertyChanged("Mision");
         }
 
         /// <summary>
-        /// Evento que muestra los detalles de la misión seleccionada
+        /// Evento que habilita o deshabilida el botón para mostrar los detalles de la misión seleccionada
         /// </summary>
         private bool MostrarDetallesCommandCanExecute()
         {
-            //throw new NotImplementedException();
-            return true;
+            bool isAvailable = true;
+            if(mision == null) isAvailable = false;
+
+            return isAvailable;
         }
         #endregion
     }
