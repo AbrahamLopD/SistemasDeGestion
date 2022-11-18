@@ -45,7 +45,7 @@ namespace _10_Ejercicios_Entidades
         #endregion
 
         #region Getters y Setters
-        public int Id { get => id; }
+        public int Id { get => id; set => id = value;  }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellidos { get => apellidos; set => apellidos = value; }
         public string Telefono { get => telefono; set => telefono = value; }

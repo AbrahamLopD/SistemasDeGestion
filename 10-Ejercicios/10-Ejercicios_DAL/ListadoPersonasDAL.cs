@@ -1,4 +1,5 @@
 ﻿using _10_Ejercicios_Entidades;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -34,13 +35,78 @@ namespace _10_Ejercicios_DAL
 
         #region Métodos
         /// <summary>
-        /// Función que devuelve un listado de personas
+        /// Función que accede a la base de datos y devuelve un listado de personas
         /// Precondición: La clase Persona debe existir
         /// Postcondición: ninguna
         /// </summary>
         /// <returns></returns>
         public static List<Persona> ListarPersonas()
         {
+
+            SqlConnection miConexion = new SqlConnection();
+
+            List<Persona> listadoPersonas = new List<Persona>();
+
+            SqlCommand miComando = new SqlCommand();
+
+            SqlDataReader miLector;
+
+            Persona oPersona;
+
+            miConexion.ConnectionString = "server=rlindes.database.windows.net;database=rubenDB;uid=fernando;pwd=Mandaloriano69;";
+            try
+            {
+
+                miConexion.Open();
+
+                miComando.CommandText = "SELECT * FROM personas";
+
+                miComando.Connection = miConexion;
+
+                miLector = miComando.ExecuteReader();
+
+                if (miLector.HasRows)
+                {
+                    while (miLector.Read())
+                    {
+
+                        oPersona = new Persona();
+
+                        oPersona.Id = (int)miLector["ID"];
+
+                        oPersona.Nombre = (string)miLector["Nombre"];
+
+                        oPersona.Apellidos = (string)miLector["Apellidos"];
+
+                        oPersona.Telefono = (string)miLector["Telefono"];
+                        oPersona.Direccion = (string)miLector["Direccion"];
+                        oPersona.Foto = (string)miLector["Foto"];
+
+                        //Si sospechamos que el campo puede ser Null en la BBDD
+                        if (miLector["FechaNacimiento"] != System.DBNull.Value)
+                        {
+                            oPersona.FechaNacimiento = (DateTime)miLector["FechaNacimiento"];
+                        }
+
+                        oPersona.IdDepartamento = (int)miLector["IDDepartamento"];
+
+                        listadoPersonas.Add(oPersona);
+
+                    }
+
+                }
+                miLector.Close();
+
+            }
+            catch (Exception e)
+            {
+                // Poner página de error
+            }
+            finally
+            {
+                miConexion.Close();
+            }
+
             return listadoPersonas;
         }
 

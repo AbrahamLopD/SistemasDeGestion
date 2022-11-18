@@ -54,36 +54,7 @@ namespace _10_Ejercicios_UI.Controllers
         public ActionResult ListadoPersona()
         {
             List<Persona> personas = ListadoPersonasDAL.ListarPersonas();
-
-            SqlConnection miConexion = new SqlConnection();
-
-            List<Persona> listadoPersonas = new List<Persona>();
-
-            SqlCommand miComando = new SqlCommand();
-
-            SqlDataReader miLector;
-
-            Persona oPersona;
-
-            miConexion.ConnectionString = "server=rlindes.database.windows.net;database=rubenDB;uid=fernando;pwd=Mandaloriano69;";
-            try
-            {
-
-                miConexion.Open();
-
-                miComando.CommandText = "SELECT * FROM personas";
-
-                miComando.Connection = miConexion;
-
-                miLector = miComando.ExecuteReader();
-
-            }
-            catch (Exception e)
-            {
-                // Poner página de error
-            }
-
-                return View(personas);
+            return View(personas);
         }
 
 
